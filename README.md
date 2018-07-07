@@ -44,8 +44,8 @@ I've since added flags to the alu.
 
 ## Instructions Table
 
-* 0x0x - Loads the value of input 'a' and adds it to memory address x
-* 0x1x - Loads the value of input 'b' and adds it to memory address x
+* 0x0x - Loads the value of input 'a' and assigns it to memory address x
+* 0x1x - Loads the value of input 'b' and assigns it to memory address x
 * 0x2x - Adds 'a' and 'b' and assigns the output to memory address x
 * 0x3x - Subtracts 'a' by 'b' and assigns the output to memory address x
 * 0x4x - Multiplies 'a' by 'b' and assigns the output to memory address x
