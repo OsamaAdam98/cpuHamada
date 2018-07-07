@@ -7,7 +7,7 @@ This processor has very limited capabilities but does what it does well.
 This was part of a project issued by prof. Al-Habrouk, Faculty of Engineering, Alexandria University.
 
 I had to learn Verilog and write up this code in the span of 4 days. The code isn't perfect but I'm
-proud of what I've accomplished.
+proud of what I'd accomplished.
 
 What follows is a detailed description of what every module is and what it does.
 
