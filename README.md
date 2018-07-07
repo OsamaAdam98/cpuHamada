@@ -1,4 +1,4 @@
-# cpuHamada
+# cpuSyoufShamaa
 
 This simulation was modeled after *Ben Eater*'s 8-bit processor and is written entirely in Verilog
 and is meant to be simulated in Modelsim.
