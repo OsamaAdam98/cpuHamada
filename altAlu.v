@@ -14,7 +14,7 @@ module altAlu(input reg[7:0] a, input reg[7:0] b, input[7:0] ramInst, output[7:0
     wire[8:0] temp;
 
     assign aluResult = resultReg;
-    assign temp = {1'b0,a} + {1'b0,b};
+    assign temp = {1'b0,a} + {1'b0,b}; //carry bit hack
 
     always@(posedge clk) begin
 
@@ -49,13 +49,6 @@ module altAlu(input reg[7:0] a, input reg[7:0] b, input[7:0] ramInst, output[7:0
         endcase
 
 
-    end
-
-    always@(posedge clk) begin
-        #20
-        if((ramInst == `sub) && (b > a)) begin: ifLoop
-            resultReg = ((resultReg ^ 8'hFF) + 1); //two's complement
-        end
     end
 
 endmodule
