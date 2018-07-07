@@ -15,9 +15,9 @@ to the appropriate memory address.
 of simplicity.
 
 ##### memory Module has three inputs, ramInput, instr and clk and one output, ramOut.
-* instr: receives the instruction code from the user.
-* ramOut: passes the instruction through to the ALU.
-* ramInput: receives the output from the ALU after being processed.
+* *instr*: receives the instruction code from the user.
+* *ramOut*: passes the instruction through to the ALU.
+* *ramInput*: receives the output from the ALU after being processed.
 
 ## clk Module
 
@@ -35,8 +35,8 @@ of simplicity.
 I've since added flags to the alu.
 
 ##### Current working flags are carry and compare flags
-* carryFlag: turns one when there's a carry to addition (say adding 0xFF to 0x01).
-* compFlag: turns one when input a < b, this comes in handy for two's complement.
+* *carryFlag*: turns one when there's a carry to addition (say adding 0xFF to 0x01).
+* *compFlag*: turns one when input a < b, this comes in handy for two's complement.
 
 ## cpu Module
 
