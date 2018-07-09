@@ -6,8 +6,8 @@ This processor has very limited capabilities but does what it does well.
 
 This was part of a project issued by prof. Al-Habrouk, Faculty of Engineering, Alexandria University.
 
-I had to learn Verilog and write up this code in the span of 4 days. The code isn't perfect but I'm
-proud of what I'd accomplished.
+All the modules have the prefix 'alt' because this was created as an alternate project
+and ended up as the main project but I kept the names to avoid confusion.
 
 What follows is a detailed description of what every module is and what it does.
 
@@ -58,5 +58,21 @@ I've since added flags to the alu.
 * 0x6x - Shifts 'a' left by 'b' and assigns the output to memory address x
 * 0x7x - Shifts 'a' right by 'b' and assigns the output to memory address x
 
-All the modules have the prefix 'alt' because this was created as an alternate project
-and ended up as the main project but I kept the names to avoid confusion.
+
+## Mode System
+
+##### Mode system gives the user the option to toggle between two mode
+
+* *Mode zero*: The user enters the instruction directly and chooses where to save the output on the RAM as usual
+* *Mode one*: The user sets up a programme into the instrMem in the memory module where a maximum of 16 operations 
+could be executed in sequence.
+
+
+* The instrMem has 16 memory address which is purely an arbitrary number for the sake of uniformity. The CPU currently as of July 2018 can only perform 8 operations (including loading a and b to memory addresses).
+* The current build is preloaded with a programme which performs all operations and assigns them to sequential memory address in the dataMemory.
+
+### Notes on mode system
+
+* In mode zero, instr can be changed during simulation time.
+* In mode one, input instr is completely useless and doesn't affect anything. although you'll need to fill it with random 8-bit to avoid
+compilation errors.
