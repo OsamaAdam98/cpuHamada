@@ -1,5 +1,8 @@
 # cpuSyoufShamaa
 
+## If you're not seeing this readme on github, you might need to check out this link because the project is being constantly updated
+## https://github.com/OsamaAdam98/cpuSyoufShamaa
+
 This simulation was modeled after *Ben Eater*'s 8-bit processor and is written entirely in Verilog
 and is meant to be simulated in Modelsim.
 This processor has very limited capabilities but does what it does well.
