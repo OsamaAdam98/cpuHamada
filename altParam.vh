@@ -10,7 +10,6 @@
 `define divide 8'h5?
 `define shiftLeft 8'h6?
 `define shiftRight 8'h7?
-`define plag 8'h??
 
 //mode 1 constants
 
