@@ -79,13 +79,13 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
                 //instrMem[8] = 8'h80;
                 j = j + 1; 
             end
-            /* Jump condition begins */
             else if(j > 0 && k < 9) begin
+                /* Jump condition begins */
                 if((instrMem[k] >> 4) == 8) begin
                     i = instrMem[k];
                     k = i;
                 end
-            /* Jump condition ends */
+                /* Jump condition ends */
                 else begin
                     ramOutput <= instrMem[k]; //send the instruction to the ALU
                     i = instrMem[k]; //i is only 4-bit wide so it'll only hold the 4 LSBs of instrMem[x]
