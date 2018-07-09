@@ -89,4 +89,9 @@ compilation errors.
 * dataMemory is an array of registers found in the memory module.
 * Also this goes without saying, but, you'll have to compile all the files in this repo before simulating.
 
-![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/sample%20sim.png)
+### mode 1 simulation sample
+![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/modeOne.png)
+### Over flow condition simulation sample
+![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/overflowCond.png)
+### Twos' complement condition simulation sample
+![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/twoscompCond.png)
