@@ -8,14 +8,14 @@
 `include "altAlu.v"
 `include "clock.v"
 
-module altCpu(input[7:0] a, input[7:0] b, input[7:0] inputInstr);
+module altCpu(input[7:0] a, input[7:0] b, input[7:0] inputInstr, input mode);
 
     wire[7:0] ramInst;
     wire[7:0] aluOut;
     wire clk;
-    
+
     clock pulse(clk);
     altAlu cpuAlu(a, b, ramInst, aluOut, carryFlag, compFlag, clk);
-    altMemory cpuMemory(aluOut, inputInstr, ramInst, clk);
+    altMemory cpuMemory(aluOut, inputInstr, ramInst, mode, clk);
 
 endmodule
