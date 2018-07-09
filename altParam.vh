@@ -10,3 +10,15 @@
 `define divide 8'h5?
 `define shiftLeft 8'h6?
 `define shiftRight 8'h7?
+`define plag 8'h??
+
+//mode 1 constants
+
+`define oneLoadA 8'h00
+`define oneLoadB 8'h11
+`define oneAdd 8'h22
+`define oneSub 8'h33
+`define oneMultiply 8'h44
+`define oneDivide 8'h55
+`define oneShiftLeft 8'h66
+`define oneShiftRight 8'h77
