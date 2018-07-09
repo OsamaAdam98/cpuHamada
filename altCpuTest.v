@@ -11,6 +11,6 @@
 
 module altCpuTestBench();
 
-    altCpu testCpu(/*a*/8'hFF, /*b*/8'h01, /*instr*/8'h28);
+    altCpu testCpu(/*a*/8'h0F, /*b*/8'h03, /*instr*/8'h28, /*mode*/0);
 
 endmodule
