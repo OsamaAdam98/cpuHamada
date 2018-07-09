@@ -17,17 +17,20 @@
 
 `include "altParam.vh"
 
-module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, input clk);
+module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, input mode, input clk);
 
     reg[7:0] dataMemory[15:0]; //Main data storage
+    reg[7:0] instrMem[15:0]; //instruction memory for mode 1
     reg[7:0] ramOutput; //output register
     reg[3:0] i; //a register to hold memory address
     integer j = 0; //an integer to be used for counting
+    integer k = 0;
 
     assign ramOut = ramOutput;
 
     always@(posedge clk) begin
-        
+        //Legacy code
+        /*
         if(j == 0) begin //loading 'a' request
             ramOutput = `loadA;
             i = `loadA;
@@ -38,8 +41,8 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
             i = `loadB;
             j = j + 1;
         end
-        
-        else if (j > 1) begin //instruction request
+        */
+        if(mode == 0) begin //instruction request
             casez(instr)
 
                 `loadA: ramOutput = `loadA; //legacy loading request, not necessarily used in current build
@@ -54,6 +57,24 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
             endcase
             i = instr; //i is only 4-bit wide so it'll only hold the 4 LSBs of instr
         end    
+        else if(mode == 1) begin
+            if(j == 0) begin
+                instrMem[0] = `oneLoadA;
+                instrMem[1] = `oneLoadB;
+                instrMem[2] = `oneAdd;
+                instrMem[3] = `oneSub;
+                instrMem[4] = `oneMultiply;
+                instrMem[5] = `oneDivide;
+                instrMem[6] = `oneShiftLeft;
+                instrMem[7] = `oneShiftRight;
+                j = j + 1;
+            end
+            else if(j > 0 && k < 8) begin
+                ramOutput <= instrMem[k];
+                i = instrMem[k]; //i is only 4-bit wide so it'll only hold the 4 LSBs of instrMem[x]
+                k = k + 1;
+            end
+        end
 
     end
 
