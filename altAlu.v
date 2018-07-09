@@ -8,23 +8,36 @@
 
 `include "altMemory.v"
 
-module altAlu(input reg[7:0] a, input reg[7:0] b, input[7:0] ramInst, output[7:0] aluResult, reg carryFlag = 0, reg compFlag = 0, input clk);
+module altAlu
+    (   input[7:0] inputA, 
+        input[7:0] inputB, 
+        input[7:0] ramInst, 
+        output[7:0] aluResult, 
+        reg carryFlag = 0, 
+        reg compFlag = 0, 
+        input clk   );
 
     reg[7:0] resultReg;
     wire[8:0] temp;
+    reg[7:0] a;
+    reg[7:0] b;
+    integer l = 0;
 
     assign aluResult = resultReg;
-    assign temp = {1'b0,a} + {1'b0,b}; //carry bit hack
+    assign temp = {1'b0,a} + {1'b0,b}; //carry hack
+
 
     always@(posedge clk) begin
-
-        
-
+        if(l ==0) begin
+            a <= inputA;
+            b <= inputB;
+            l = l + 1;
+        end
+        else begin
         #10
         casez(ramInst)
-
-            `loadA: resultReg = a; //load a
-            `loadB: resultReg = b; //load b
+            `loadA: a <= resultReg; //load last output to a
+            `loadB: b <= resultReg; //load last output to b
             `multiply: resultReg = a * b; //multiply
             `divide: resultReg = a / b; //divide
             `shiftLeft: resultReg = a << b; //shift left
@@ -47,7 +60,7 @@ module altAlu(input reg[7:0] a, input reg[7:0] b, input[7:0] ramInst, output[7:0
                         end
                     end
         endcase
-
+        end
 
     end
 
