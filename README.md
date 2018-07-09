@@ -85,3 +85,5 @@ compilation errors.
 * During simulation in Modelsim, you'll need to keep an eye on dataMemory where all the outputs show up.
 * dataMemory is an array of registers found in the memory module.
 * Also this goes without saying, but, you'll have to compile all the files in this repo before simulating.
+
+![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/sample%20sim.png)
