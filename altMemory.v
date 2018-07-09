@@ -11,10 +11,13 @@
 *0x5x - divide the two values and save them to memory address x
 *0x6x - shift 'a' left by 'b' (a * (2^b)) and save them to memory address x
 *0x7x - shift 'a' right by 'b' (a / (2^b)) and save them to memory address x
+*0x8x - jumps to instruction in memory address x, this is only available in mode 1
 *This RAM module has 16 memory address each of them is 8 bit-wide (8*16)
 *Notice that memory address 0 and 1 are reserved for a and b respectively
 *This is mostly true for mode 0 only, check readme for mode descriptions
 */
+
+/* Search for #programme to find the programmable instruction memory */
 
 `include "altParam.vh"
 
@@ -46,8 +49,8 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
         if(mode == 0) begin //instruction request
             casez(instr)
 
-                `loadA: ramOutput = `loadA; //legacy loading request, not necessarily used in current build
-                `loadB: ramOutput = `loadB; //legacy loading request, not necessarily used in current build
+                `loadA: ramOutput = `loadA; 
+                `loadB: ramOutput = `loadB; 
                 `add: ramOutput = `add; 
                 `sub: ramOutput = `sub;
                 `multiply: ramOutput = `multiply;
@@ -63,20 +66,31 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
             /* Put your own programme here */
             /* This is my default programme which performs all the instructions */
             /* Change as you see fit as long as memory addresses don't clash */
-                instrMem[0] = `oneLoadA;
-                instrMem[1] = `oneLoadB;
-                instrMem[2] = `oneAdd;
-                instrMem[3] = `oneSub;
-                instrMem[4] = `oneMultiply;
-                instrMem[5] = `oneDivide;
-                instrMem[6] = `oneShiftLeft;
-                instrMem[7] = `oneShiftRight;
+            /* #programme */
+                instrMem[0] = `oneAdd;
+                instrMem[1] = `oneSub;
+                instrMem[2] = `oneMultiply;
+                instrMem[3] = `oneDivide;
+                instrMem[4] = `oneShiftLeft;
+                instrMem[5] = `oneShiftRight;
+                instrMem[6] = `oneLoadA;
+                instrMem[7] = `oneLoadB;
+                /* Jump instruction, use wisely. */
+                //instrMem[8] = 8'h80;
                 j = j + 1; 
             end
-            else if(j > 0 && k < 8) begin
-                ramOutput <= instrMem[k]; //send the instruction to the ALU
-                i = instrMem[k]; //i is only 4-bit wide so it'll only hold the 4 LSBs of instrMem[x]
-                k = k + 1;
+            /* Jump condition begins */
+            else if(j > 0 && k < 9) begin
+                if((instrMem[k] >> 4) == 8) begin
+                    i = instrMem[k];
+                    k = i;
+                end
+            /* Jump condition ends */
+                else begin
+                    ramOutput <= instrMem[k]; //send the instruction to the ALU
+                    i = instrMem[k]; //i is only 4-bit wide so it'll only hold the 4 LSBs of instrMem[x]
+                    k = k + 1;
+                end
             end
         end
 
