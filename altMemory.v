@@ -13,6 +13,7 @@
 *0x7x - shift 'a' right by 'b' (a / (2^b)) and save them to memory address x
 *This RAM module has 16 memory address each of them is 8 bit-wide (8*16)
 *Notice that memory address 0 and 1 are reserved for a and b respectively
+*This is mostly true for mode 0 only, check readme for mode descriptions
 */
 
 `include "altParam.vh"
@@ -24,7 +25,7 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
     reg[7:0] ramOutput; //output register
     reg[3:0] i; //a register to hold memory address
     integer j = 0; //an integer to be used for counting
-    integer k = 0;
+    integer k = 0; //another integer used for counting
 
     assign ramOut = ramOutput;
 
@@ -58,7 +59,10 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
             i = instr; //i is only 4-bit wide so it'll only hold the 4 LSBs of instr
         end    
         else if(mode == 1) begin
-            if(j == 0) begin
+            if(j == 0) begin //This will only be true on the start of the simulation
+            /* Put your own programme here */
+            /* This is my default programme which performs all the instructions */
+            /* Change as you see fit as long as memory addresses don't clash */
                 instrMem[0] = `oneLoadA;
                 instrMem[1] = `oneLoadB;
                 instrMem[2] = `oneAdd;
@@ -67,10 +71,10 @@ module altMemory(input[7:0] ramInput, input[7:0] instr, output[7:0] ramOut, inpu
                 instrMem[5] = `oneDivide;
                 instrMem[6] = `oneShiftLeft;
                 instrMem[7] = `oneShiftRight;
-                j = j + 1;
+                j = j + 1; 
             end
             else if(j > 0 && k < 8) begin
-                ramOutput <= instrMem[k];
+                ramOutput <= instrMem[k]; //send the instruction to the ALU
                 i = instrMem[k]; //i is only 4-bit wide so it'll only hold the 4 LSBs of instrMem[x]
                 k = k + 1;
             end
