@@ -57,6 +57,7 @@ I've since added flags to the alu.
 * 0x5x - Divides 'a' by 'b' and assigns the output to memory address x
 * 0x6x - Shifts 'a' left by 'b' and assigns the output to memory address x
 * 0x7x - Shifts 'a' right by 'b' and assigns the output to memory address x
+* 0x8x - jumps to the instruction in memory address x, this is only available in mode 1
 
 
 ## Mode System
@@ -76,3 +77,10 @@ could be executed in sequence.
 * In mode zero, instr can be changed during simulation time.
 * In mode one, input instr is completely useless and doesn't affect anything. although you'll need to fill it with random 8-bit to avoid
 compilation errors.
+
+## Simulation
+
+##### I'm using Modelsim for simulation and currently I have no access to an actual fpga board so this I have no idea whether it'll work on an fpga or not. But I guarantee it'll work in Modelsim
+
+* During simulation in Modelsim, you'll need to keep an eye on dataMemory where all the outputs show up.
+* dataMemory is an array of registers found in the memory module.
