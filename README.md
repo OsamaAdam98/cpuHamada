@@ -90,6 +90,11 @@ compilation errors.
 * Also this goes without saying, but, you'll have to compile all the files in this repo before simulating.
 
 ### mode 1 simulation sample
+
+##### inputs are:
+* *a* = 15
+* *b* = 3
+
 ![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/modeOne.png)
 ### Over flow condition simulation sample
 ![alt text](https://github.com/OsamaAdam98/cpuSyoufShamaa/blob/master/overflowCond.png)
