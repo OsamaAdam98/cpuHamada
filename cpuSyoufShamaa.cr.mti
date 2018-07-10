@@ -1,0 +1,48 @@
+C:/intelFPGA_lite/18.0/8-bit_CPU/altParam.vh {1 {vlog -work work -stats=none C:/intelFPGA_lite/18.0/8-bit_CPU/altParam.vh
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+
+} {} {}} C:/intelFPGA_lite/18.0/8-bit_CPU/altMemory.v {1 {vlog -work work -stats=none C:/intelFPGA_lite/18.0/8-bit_CPU/altMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module altMemory
+
+Top level modules:
+	altMemory
+
+} {} {}} C:/intelFPGA_lite/18.0/8-bit_CPU/altAlu.v {1 {vlog -work work -stats=none C:/intelFPGA_lite/18.0/8-bit_CPU/altAlu.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module altMemory
+-- Compiling module altAlu
+
+Top level modules:
+	altMemory
+	altAlu
+
+} {} {}} C:/intelFPGA_lite/18.0/8-bit_CPU/clock.v {1 {vlog -work work -stats=none C:/intelFPGA_lite/18.0/8-bit_CPU/clock.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module clock
+
+Top level modules:
+	clock
+
+} {} {}} C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v {1 {vlog -work work -stats=none C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module altMemory
+-- Compiling module altAlu
+-- Compiling module clock
+-- Compiling module altCpu
+-- Compiling module altCpuTestBench
+
+Top level modules:
+	altCpuTestBench
+
+} {} {}} C:/intelFPGA_lite/18.0/8-bit_CPU/altCPU.v {1 {vlog -work work -stats=none C:/intelFPGA_lite/18.0/8-bit_CPU/altCPU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module altMemory
+-- Compiling module altAlu
+-- Compiling module clock
+-- Compiling module altCpu
+
+Top level modules:
+	altCpu
+
+} {} {}}
