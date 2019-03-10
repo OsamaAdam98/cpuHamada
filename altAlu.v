@@ -7,7 +7,7 @@
 */
 
 `include "altMemory.v"
-//testing
+
 module altAlu
     (   input[7:0] inputA, 
         input[7:0] inputB, 
