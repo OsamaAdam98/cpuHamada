@@ -9,34 +9,34 @@ z2
 cModel Technology
 dC:/intelFPGA_lite/18.0
 valtAlu
-Z0 !s110 1531223827
+Z0 !s110 1552245035
 !i10b 1
-!s100 VCVkBER9L7TE<ziOnB:NN2
-IUWaX6QbF@0<8Uk3VYz9kW3
+!s100 `9f^^2fb>Di=aWa69Y2N61
+Io>K9J_VM35bOf6YzJ9IHo0
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/intelFPGA_lite/18.0/8-bit_CPU
-w1531223097
-8altAlu.v
-FaltAlu.v
+Z2 dd:/git/cpuSyoufShamaa
+w1552238959
+8d:\git\cpuSyoufShamaa\altAlu.v
+Fd:\git\cpuSyoufShamaa\altAlu.v
 Z3 L0 11
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1531223827.000000
-Z6 !s107 clock.v|altParam.vh|altMemory.v|altAlu.v|altCPU.v|C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v|
-Z7 !s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v|
+Z5 !s108 1552245035.000000
+Z6 !s107 altParam.vh|altMemory.v|d:\git\cpuSyoufShamaa\altAlu.v|
+Z7 !s90 -nologo|-work|work|d:\git\cpuSyoufShamaa\altAlu.v|
 !i113 1
-Z8 o-work work
+Z8 o-nologo -work work
 Z9 tCvgOpt 0
 nalt@alu
 valtCpu
-R0
+Z10 !s110 1531223827
 !i10b 1
 !s100 9`D=:_6Pi<N?f>4U=GOI<3
 IJ2bP<micR_TWnhlZb]C3_2
 R1
-R2
+Z11 dC:/intelFPGA_lite/18.0/8-bit_CPU
 w1531155064
 8altCPU.v
 FaltCPU.v
@@ -45,20 +45,20 @@ R4
 r1
 !s85 0
 31
-R5
-R6
-R7
+Z12 !s108 1531223827.000000
+Z13 !s107 clock.v|altParam.vh|altMemory.v|altAlu.v|altCPU.v|C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v|
+Z14 !s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v|
 !i113 1
-R8
+Z15 o-work work
 R9
 nalt@cpu
 valtCpuTestBench
-R0
+R10
 !i10b 1
 !s100 Rm_[gN:I[b9^E^<SOU8R[2
 IOJQbVSm07hHk:VKk>U;9:1
 R1
-R2
+R11
 w1531178026
 8C:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v
 FC:/intelFPGA_lite/18.0/8-bit_CPU/altCpuTest.v
@@ -67,42 +67,42 @@ R4
 r1
 !s85 0
 31
-R5
-R6
-R7
+R12
+R13
+R14
 !i113 1
-R8
+R15
 R9
 nalt@cpu@test@bench
 valtMemory
 R0
 !i10b 1
 !s100 HPGU7@NeUgl7gmUj;EQ6I2
-IYW<olQn2<<J0h8`Wi8XKc2
+I6JB6hN2^YaG9gj5WMY0g;1
 R1
 R2
-w1531170802
-8C:/intelFPGA_lite/18.0/8-bit_CPU/altMemory.v
-FC:/intelFPGA_lite/18.0/8-bit_CPU/altMemory.v
+w1552234422
+8altMemory.v
+FaltMemory.v
 L0 24
 R4
 r1
 !s85 0
 31
 R5
-!s107 altParam.vh|C:/intelFPGA_lite/18.0/8-bit_CPU/altMemory.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA_lite/18.0/8-bit_CPU/altMemory.v|
+R6
+R7
 !i113 1
 R8
 R9
 nalt@memory
 vclock
-R0
+R10
 !i10b 1
 !s100 if=eoGFh`nJ?oN=0KIeom1
 I@Pc_:Jnz0[;GP]moCGj>P0
 R1
-R2
+R11
 w1530994359
 8C:/intelFPGA_lite/18.0/8-bit_CPU/clock.v
 FC:/intelFPGA_lite/18.0/8-bit_CPU/clock.v
@@ -111,9 +111,9 @@ R4
 r1
 !s85 0
 31
-R5
+R12
 !s107 C:/intelFPGA_lite/18.0/8-bit_CPU/clock.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA_lite/18.0/8-bit_CPU/clock.v|
 !i113 1
-R8
+R15
 R9
